@@ -41,7 +41,6 @@ def test_remove_state_no_key():
     state_3 = State("water", T=500 * units.kelvin, v=1 * units.m ** 3 / units.kg)
     v.add_state(state_3)  # test of repr(state)
     v.remove_state(state_3)
-    # assert v.states[repr(state_3)] == None
 
 
 def test_remove_state_key_input():
@@ -50,8 +49,6 @@ def test_remove_state_key_input():
     state_4 = State("water", T=400 * units.kelvin, v=1 * units.m ** 3 / units.kg)
     v.add_state(state_4, key="st4")  # test of key
     v.remove_state(key="st4")
-    # assert state_4 not in v.states #fails whether its "in" or "not in". whats a better
-    # way to define this
 
 
 def test_remove_state_wrong_key_no_state():
@@ -92,8 +89,6 @@ def test_remove_process_without_remove_states():
     v.add_state(state_2)
     v.add_process(state_1, state_2)
     v.remove_process(state_1, state_2, remove_states=False)
-    # would like to assert if the states are in v.states and if process was
-    # removed from v.states
 
 
 def test_remove_process_with_remove_states():
@@ -109,8 +104,6 @@ def test_remove_process_with_remove_states():
     v.add_state(state_2)
     v.add_process(state_1, state_2)
     v.remove_process(state_1, state_2, remove_states=True)
-    # would like to assert if the states are removed from v.states and if process was
-    # removed from v.states
 
 
 def test_add_process_states_already_added():
